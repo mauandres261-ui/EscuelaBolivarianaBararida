@@ -1,0 +1,2 @@
+# EscuelaBolivarianaBararida
+Escuela Bolivariana Bararida
