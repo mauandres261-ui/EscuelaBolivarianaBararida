@@ -214,28 +214,74 @@ footer {
 
 /* Responsive para móviles */
 @media (max-width: 480px) {
+
+    /* HEADER */
+    header {
+        /* Ajustar padding para que no sea tan alto */
+        padding: 15px 10px; 
+    }
     header h1 {
-        
-      font-size: 1.2em; 
+        /* Tamaño de fuente más pequeño para el título */
+        font-size: 1.4em; 
     }
-    .content h2{
-          font-size: 1.4em; 
-         }
-    .galeria img{
-        height: 150px;
-    }
-    table{
-          font-size: 0.8em; 
-    }
+
+    /* BOTÓN DE HAMBURGUESA */
     .menu-toggle {
-        left: 10px; /* Mover un poco hacia la izquierda */
-        top: 10px; /* Mover un poco hacia arriba */
-        padding: 8px; /* Reducir padding */
+        left: 10px; 
+        top: 10px; 
+        padding: 8px; 
         font-size: 20px;
+        /* Asegurarse de que esté delante del header */
+        z-index: 1002;
+    }
+
+    /* SIDEBAR (Ahora cubre todo el ancho) */
+    .sidebar {
+        width: 100%;
+        box-sizing: border-box; /* Incluye padding en el 100% de ancho */
+        padding-top: 60px; /* Deja espacio para que el botón de hamburguesa sea visible */
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    .content {
+        /* No debe tener margen fijo en móvil, ya que el sidebar se superpone */
+        margin-left: 0 !important; /* Usar !important para anular la clase .shifted */
+        padding: 10px; /* Reducir el padding general */
     }
     
+    .content section {
+        /* Ajustar el padding interno */
+        padding: 0;
+    }
+
+    .content h2 {
+        font-size: 1.4em; 
+    }
+
+    /* GALERÍA */
+    .galeria {
+        /* Forzar una sola columna para imágenes más grandes */
+        grid-template-columns: 1fr; 
+    }
+    .galeria img {
+        /* Ajustar la altura para que no sean demasiado grandes */
+        height: 250px; 
+    }
+
+    /* TABLA */
+    table {
+        font-size: 0.8em; 
+        /* Usar display: block y overflow-x: auto es crucial para tablas grandes */
+    }
+    th, td {
+        padding: 6px; /* Reducir el padding de las celdas */
+    }
     
-   
+    /* FOOTER */
+    footer {
+        padding: 15px 10px;
+        font-size: 0.9em;
+    }
 }
 .contenedor p,a{
     text-align: center;
